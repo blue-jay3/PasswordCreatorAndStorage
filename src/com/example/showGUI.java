@@ -6,13 +6,16 @@ import java.awt.event.*;
 
 public class showGUI implements ActionListener {
     JFrame myFrame;
+    JButton btn;
+    JTextField pwdLength;
+    JTextField pwdNumber;
     passwordCreator pwd = new passwordCreator();
 
     public showGUI(){
         myFrame = new JFrame("Password Generator");
-        JButton btn = new JButton("Generate");
-        JTextField pwdLength = new JTextField(7);
-        JTextField pwdNumber = new JTextField(7);
+        btn = new JButton("Generate");
+        pwdLength = new JTextField(7);
+        pwdNumber = new JTextField(7);
 
         myFrame.setLayout(null);
         myFrame.setSize(700, 400);
@@ -20,11 +23,13 @@ public class showGUI implements ActionListener {
         myFrame.setDefaultCloseOperation(myFrame.EXIT_ON_CLOSE);
 
         btn.setSize(130,70);
-        btn.setLocation(270,200);
+        btn.setLocation(270,45);
         btn.setBackground(Color.LIGHT_GRAY);
 
-        pwdLength.setLocation(30, 60);
-        pwdLength.setLocation(70, 60);
+        pwdLength.setLocation(100, 60);
+        pwdLength.setSize(100, 25);
+        pwdNumber.setLocation(480, 60);
+        pwdNumber.setSize(100, 25);
 
         myFrame.add(btn);
         myFrame.add(pwdLength);
@@ -34,8 +39,10 @@ public class showGUI implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        System.out.println(pwd.randomizer());
-        System.out.println(pwd.randomizer());
+        pwd.length = Integer.parseInt(pwdLength.getText());
+        int pwdInt = Integer.parseInt(pwdNumber.getText());
+
+        for (int i = 0; i < pwdInt; i++)
         System.out.println(pwd.randomizer());
     }
 }

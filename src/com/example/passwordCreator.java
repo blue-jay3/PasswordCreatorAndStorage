@@ -13,7 +13,7 @@ public class passwordCreator {
         Random random = new Random();
 
         // specify length of random string
-        int length = 14;
+        int length = 0;
 
     public String randomizer() {
         String randomString;
