@@ -1,6 +1,7 @@
 package com.example;
 
 import javax.swing.*;
+import javax.swing.plaf.multi.MultiInternalFrameUI;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -9,6 +10,9 @@ public class showGUI implements ActionListener {
     JButton btn;
     JTextField pwdLength;
     JTextField pwdNumber;
+    JLabel lengthLabel;
+    JLabel numberLabel;
+
     passwordCreator pwd = new passwordCreator();
 
     public showGUI(){
@@ -16,6 +20,8 @@ public class showGUI implements ActionListener {
         btn = new JButton("Generate");
         pwdLength = new JTextField(7);
         pwdNumber = new JTextField(7);
+        lengthLabel = new JLabel("Number of Characters:");
+        numberLabel = new JLabel("Amount of Passwords:");
 
         myFrame.setLayout(null);
         myFrame.setSize(700, 400);
@@ -26,6 +32,11 @@ public class showGUI implements ActionListener {
         btn.setLocation(270,45);
         btn.setBackground(Color.LIGHT_GRAY);
 
+        lengthLabel.setLocation(90, 20);
+        lengthLabel.setSize(200, 25);
+        numberLabel.setLocation(465, 20);
+        numberLabel.setSize(200, 25);
+
         pwdLength.setLocation(100, 60);
         pwdLength.setSize(100, 25);
         pwdNumber.setLocation(480, 60);
@@ -34,6 +45,8 @@ public class showGUI implements ActionListener {
         myFrame.add(btn);
         myFrame.add(pwdLength);
         myFrame.add(pwdNumber);
+        myFrame.add(lengthLabel);
+        myFrame.add(numberLabel);
 
         btn.addActionListener(this);
     }
