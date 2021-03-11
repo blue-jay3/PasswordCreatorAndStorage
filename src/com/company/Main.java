@@ -1,4 +1,4 @@
-package com.paintcalculatorprogramv3;
+package com.company;
 
 public class Main {
 
