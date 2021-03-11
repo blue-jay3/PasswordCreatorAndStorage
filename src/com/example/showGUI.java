@@ -1,4 +1,4 @@
-package com.company;
+package com.example;
 
 import javax.swing.*;
 
@@ -7,8 +7,12 @@ public class showGUI {
     passwordCreator pwd = new passwordCreator();
 
     public void gui(){
+        JButton btn = new JButton("Generate");
+
         myFrame.setLayout(null);
         myFrame.setSize(700, 400);
         myFrame.setVisible(true);
+
+
     }
 }
