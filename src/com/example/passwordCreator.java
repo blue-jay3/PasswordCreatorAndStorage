@@ -12,12 +12,9 @@ public class passwordCreator {
         // create an object of Random class
         Random random = new Random();
 
-        // specify length of random string
-        int length = 0;
-
-    public String randomizer() {
+    public String randomizer(int length) {
         String randomString;
-        sb.delete(0, length);
+        sb.delete(0, sb.length());
 
         for (int i = 0; i < length; i++) {
 

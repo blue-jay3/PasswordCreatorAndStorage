@@ -12,6 +12,7 @@ public class showGUI implements ActionListener {
     JTextField pwdNumber;
     JLabel lengthLabel;
     JLabel numberLabel;
+    JLabel showPasswords;
 
     passwordCreator pwd = new passwordCreator();
 
@@ -22,6 +23,7 @@ public class showGUI implements ActionListener {
         pwdNumber = new JTextField(7);
         lengthLabel = new JLabel("Number of Characters:");
         numberLabel = new JLabel("Amount of Passwords:");
+        showPasswords = new JLabel("");
 
         myFrame.setLayout(null);
         myFrame.setSize(700, 400);
@@ -42,20 +44,25 @@ public class showGUI implements ActionListener {
         pwdNumber.setLocation(480, 60);
         pwdNumber.setSize(100, 25);
 
+        showPasswords.setLocation(60,100);
+        showPasswords.setSize(700,100);
+
         myFrame.add(btn);
         myFrame.add(pwdLength);
         myFrame.add(pwdNumber);
         myFrame.add(lengthLabel);
         myFrame.add(numberLabel);
+        myFrame.add(showPasswords);
 
         btn.addActionListener(this);
     }
 
     public void actionPerformed(ActionEvent e) {
-        pwd.length = Integer.parseInt(pwdLength.getText());
+        showPasswords.setText("");
         int pwdInt = Integer.parseInt(pwdNumber.getText());
 
-        for (int i = 0; i < pwdInt; i++)
-        System.out.println(pwd.randomizer());
+        for (int i = 0; i < pwdInt; i++) {
+            showPasswords.setText(showPasswords.getText() + (i + 1) + ": " + pwd.randomizer(Integer.parseInt(pwdLength.getText())) + "  ");
+        }
     }
 }
